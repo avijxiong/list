@@ -20,7 +20,7 @@ jobs:
       with:
         # optional: set the branch to checkout,
         # sync action checks out your 'target_sync_branch' anyway
-        ref:  master
+        ref:  main
         # REQUIRED if your upstream repo is private (see wiki)
         persist-credentials: false
 
@@ -35,7 +35,6 @@ jobs:
         target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_sync_branch: master
         upstream_sync_repo: yIwIoTT9A21nupT/2aXGmlWs
-        upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
 
         # Set test_mode true to run tests instead of the true action!!
         test_mode: false
