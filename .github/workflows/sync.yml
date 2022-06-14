@@ -34,7 +34,7 @@ jobs:
         # REQUIRED 'target_repo_token' exactly like this!
         target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_sync_branch: master
-        upstream_sync_repo: yIwIoTT9A21nupT/2aXGmlWs
+        upstream_sync_repo: yIwIoTT9A21nupT
 
         # Set test_mode true to run tests instead of the true action!!
         test_mode: false
