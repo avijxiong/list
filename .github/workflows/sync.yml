@@ -28,14 +28,15 @@ jobs:
     # Step 2: run the sync action
     - name: Sync upstream changes
       id: sync
-      uses: aormsby/Fork-Sync-With-Upstream-action@fix-var-name
+      uses: aormsby/Fork-Sync-With-Upstream-action@3.2
       with:
         target_sync_branch: master
         # REQUIRED 'target_repo_token' exactly like this!
         target_repo_token: ${{ secrets.GITHUB_TOKEN }}
         upstream_sync_branch: master
         upstream_sync_repo: yIwIoTT9A21nupT/2aXGmlWs
-      
+        upstream_pull_args: '--rebase --tags'
+        target_branch_push_args: '--force'
 
         # Set test_mode true to run tests instead of the true action!!
         test_mode: false
