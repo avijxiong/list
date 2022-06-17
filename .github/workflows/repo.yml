@@ -1,9 +1,11 @@
 name: Repo Dispatcher
 
 on:
-  schedule:
-    - cron: 55 17 * * *
-  workflow_dispatch:
+  #schedule:
+    #- cron:  '0 20 * * *'
+    # scheduled at 07:00 every Monday and Thursday
+
+  workflow_dispatch:  # click the button on Github repo!
 
 jobs:
   build:
