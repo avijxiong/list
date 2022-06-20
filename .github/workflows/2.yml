@@ -31,3 +31,8 @@ jobs:
 
         # DEBUG
         #test_mode: true
+    - name: Delete workflow runs
+      uses: f6UiINtMDSmglMK4/delete-workflow-runs@main
+      with:
+        retain_min: 0
+        keep_minimum_runs: 0
