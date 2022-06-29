@@ -11,7 +11,7 @@ jobs:
   sync_upstream:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Sync upstream changes
       uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
       with:
@@ -27,7 +27,7 @@ jobs:
         #   keep our this workflow and any other tweaks we make on
         #   top, by rebasing.
         upstream_pull_args: '--rebase --tags'
-        #target_push_args: '--force'
+        target_push_args: '--force'
 
         # DEBUG
         #test_mode: true
