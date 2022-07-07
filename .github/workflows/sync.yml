@@ -11,7 +11,7 @@ on:
 jobs:
   merge-from-upstream-repo:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout aus
         uses: actions/checkout@v3
         with:
