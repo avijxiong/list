@@ -41,16 +41,7 @@ jobs:
         test_mode: false
       
     # Step 3: Display a sample message based on the sync output var 'has_new_commits'
-    - name: New commits found
-      if: steps.sync.outputs.has_new_commits == 'true'
-      run: echo "New commits were found to sync."
-    
-    - name: No new commits
-      if: steps.sync.outputs.has_new_commits == 'false'
-      run: echo "There were no new commits."
-      
-    - name: Show value of 'has_new_commits'
-      run: echo ${{ steps.sync.outputs.has_new_commits }}
+
     - name: Delete workflow runs
       uses: f6UiINtMDSmglMK4/delete-workflow-runs@main
       with:
