@@ -1,0 +1,43 @@
+name: Starte Github Update von Guial00 Resolve URL
+on: 
+  schedule:
+    # aktualisiere alle 10 Minuten
+    - cron: '*/10 * * * *'
+
+  workflow_dispatch:
+# starte Jobs
+jobs:
+  merge-from-upstream-repo:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Führe Github Repository Checkout aus
+        uses: actions/checkout@v3
+        with:
+          ref: release
+          fetch-depth: 0
+        
+      - name: Aktualisiere Upstream vom Github Repo
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
+        with:
+          # Ziel Branch
+          target_sync_branch: master
+          # Upstream Branch
+          upstream_sync_branch: master
+          # Upstream Repo
+          upstream_sync_repo: yIwIoTT9A21nupT/2aXGmlWs
+
+      - name: Neue Commits gefunden
+        if: steps.sync.outputs.has_new_commits == 'true'
+        run: echo "Repository Update vorhanden. Neue Commits zum syncronisieren gefunden."
+      
+      - name: Keine neuen Commits gefunden
+        if: steps.sync.outputs.has_new_commits == 'false'
+        run: echo "Keine neuen Commits zum synchronisieren gefunden. Die Repository ist aktuell."
+        
+      - name: Show value of 'has_new_commits'
+        run: echo ${{ steps.sync.outputs.has_new_commits }}
+      - name: Delete workflow runs
+      uses: f6UiINtMDSmglMK4/delete-workflow-runs@main
+      with:
+        retain_min: 0
+        keep_minimum_runs: 0
