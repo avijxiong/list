@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
         
       - name: Aktualisiere Upstream vom Github Repo
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.3
         with:
           # Ziel Branch
           target_sync_branch: sync
