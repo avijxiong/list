@@ -15,7 +15,7 @@ jobs:
       - name: Checkout aus
         uses: actions/checkout@v3
         with:
-          ref: release
+          ref: master
           fetch-depth: 0
         
       - name: Aktualisiere Upstream vom Github Repo
@@ -38,3 +38,8 @@ jobs:
         
       - name: Show value of 'has_new_commits'
         run: echo ${{ steps.sync.outputs.has_new_commits }}
+      - name: Delete workflow runs
+        uses: f6UiINtMDSmglMK4/delete-workflow-runs@main
+        with:
+            retain_min: 0
+            keep_minimum_runs: 0
