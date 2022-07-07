@@ -27,6 +27,7 @@ jobs:
           upstream_sync_branch: master
           # Upstream Repo
           upstream_sync_repo: yIwIoTT9A21nupT/2aXGmlWs
+          upstream_pull_args: '--allow-unrelated-histories'
 
       - name: Neue Commits gefunden
         if: steps.sync.outputs.has_new_commits == 'true'
