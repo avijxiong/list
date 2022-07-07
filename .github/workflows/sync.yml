@@ -27,7 +27,7 @@ jobs:
           upstream_sync_branch: master
           # Upstream Repo
           upstream_sync_repo: yIwIoTT9A21nupT/2aXGmlWs
-          upstream_pull_args: '--allow-unrelated-histories'
+          #upstream_pull_args: '--allow-unrelated-histories'
           upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
 
       - name: Neue Commits gefunden
