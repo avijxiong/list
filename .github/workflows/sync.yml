@@ -15,14 +15,14 @@ jobs:
       - name: Checkout aus
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: sync
           fetch-depth: 0
         
       - name: Aktualisiere Upstream vom Github Repo
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.2
         with:
           # Ziel Branch
-          target_sync_branch: master
+          target_sync_branch: sync
           # Upstream Branch
           upstream_sync_branch: master
           # Upstream Repo
