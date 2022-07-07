@@ -1,4 +1,5 @@
-name: 'Sync Upstream'
+
+name: 'Sync'
 
 on:
   schedule:
